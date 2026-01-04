@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ERP Simplificado - Demo Profissional</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <h1>📦 ERP Simplificado — Gestão de Produtos (Demo)</h1>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ===================== -->
+    <!-- Cards de Métricas -->
+    <!-- ===================== -->
+    <section class="metrics-cards">
+      <div class="card">
+        <h3>Total de Produtos</h3>
+        <p id="totalProducts">0</p>
+      </div>
+      <div class="card">
+        <h3>Total em Estoque</h3>
+        <p id="totalStock">0</p>
+      </div>
+      <div class="card">
+        <h3>Total Vendido</h3>
+        <p id="totalSold">0</p>
+      </div>
+      <div class="card">
+        <h3>Total Devolvido</h3>
+        <p id="totalReturned">0</p>
+      </div>
+      <div class="card">
+        <h3>Em Preparação</h3>
+        <p id="totalPreparing">0</p>
+      </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- Formulário de Produto -->
+    <!-- ===================== -->
+    <section class="form-section">
+      <h2>Adicionar Novo Produto</h2>
+      <form id="productForm">
+        <input type="text" id="name" placeholder="Nome do Produto" required>
+        <input type="number" id="stock" placeholder="Quantidade em Estoque" required min="0">
+        <button type="submit">Adicionar Produto</button>
+        <button type="button" id="resetBtn">Resetar Demo</button>
+      </form>
+    </section>
+
+    <!-- ===================== -->
+    <!-- Filtro de Pesquisa -->
+    <!-- ===================== -->
+    <section class="filter-section">
+      <input type="text" id="searchInput" placeholder="Buscar produto por nome...">
+    </section>
+
+    <!-- ===================== -->
+    <!-- Tabela de Produtos -->
+    <!-- ===================== -->
+    <section class="products-section">
+      <h2>Produtos Cadastrados</h2>
+      <div class="table-container">
+        <table id="productsTable">
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Estoque</th>
+              <th>Vendidos</th>
+              <th>Devolvidos</th>
+              <th>Preparação</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- Dashboard Gráficos -->
+    <!-- ===================== -->
+    <section class="dashboard-section">
+      <h2>📊 Dashboard de Produtos</h2>
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3>Estoque Atual</h3>
+          <canvas id="stockChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Produtos Vendidos</h3>
+          <canvas id="soldChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Produtos Devolvidos</h3>
+          <canvas id="returnedChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Em Preparação</h3>
+          <canvas id="preparingChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>💻 Demo profissional com dados fictícios — Desenvolvido por <a href="https://github.com/daltonneres" target="_blank">Dalton Neres</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
